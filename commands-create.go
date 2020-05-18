@@ -5,6 +5,7 @@ import (
 
 	clicmdflags "github.com/codemodify/systemkit-clicmdflags"
 	service "github.com/codemodify/systemkit-service"
+	spec "github.com/codemodify/systemkit-service-spec"
 )
 
 type createCommandFlags struct {
@@ -36,7 +37,7 @@ func init() {
 				return
 			}
 
-			s := service.NewServiceFromConfig(service.Config{
+			s := service.NewServiceFromSERVICE(spec.SERVICE{
 				Name:        flags.Name,
 				Description: flags.Description,
 				Executable:  flags.Executable,
